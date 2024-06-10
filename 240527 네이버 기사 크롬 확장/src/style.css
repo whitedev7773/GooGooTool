@@ -1,0 +1,149 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+
+
+:root {
+    --ggt-btn-color: #e8def8;
+    --ggt-expanded-color: #f7f2fa;
+    --ggt-skeleton-color: #e8dbf0;
+}
+
+div#ggt {
+    transition: all 0.8s cubic-bezier(.4,.01,.36,.97);
+
+    border-radius: 20px;
+
+    font-family: 'NanumSquare', sans-serif;
+
+    overflow: hidden;
+}
+
+div#ggt > .logo-box p {
+    transform: rotate(0.1deg); /* 폰트 깨짐 방지 */
+}
+
+div#ggt.btn {
+    width: 136px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 10px 20px 0px 20px;
+
+    background-color: var(--ggt-btn-color);
+
+    cursor: pointer;
+}
+
+div#ggt.btn:hover {
+    box-shadow: 3px 3px 10px #00000015;
+}
+
+#ggt > div.logo-box {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 6px;
+}
+
+#ggt > div.logo-box > p {
+    padding-top: 2px;
+    height: fit-content !important;
+
+    vertical-align: middle;
+    font-size: 14px;
+
+    text-wrap: nowrap;
+}
+
+#ggt > div.logo-box > img {
+    width: 18px;
+    height: 18px;
+}
+
+
+div#ggt.expanded {
+    width: calc(100% - 68px);
+    height: fit-content;
+    padding: 26px 34px 26px 34px;
+
+    background-color: var(--ggt-expanded-color);
+}
+
+
+div#ggt div.skeleton {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    background-color: var(--ggt-skeleton-color);
+}
+
+div#ggt div.skeleton::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, #00000005 0%, #00000010 50%, #00000005 100%);
+    animation: loading 1.5s infinite;
+}
+  
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+#ggt #ggt-summaries, #ggt #ggt-topics {
+    margin-top: 26px;
+}
+
+#ggt h3 {
+    padding-top: 5px;
+    height: 24px;
+    
+    font-weight: 800;
+    font-size: 22px;
+
+    background: -webkit-linear-gradient(45deg, #70A0FF 0%, #e26dff 100%);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#ggt-summaries p, #ggt-topics li {
+    transform: rotate(0.1deg);
+    margin: 5px 0px;
+    font-weight: 700;
+}
+
+#ggt-keywords {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+#ggt-keywords p {
+    transform: rotate(0.1deg);
+    flex-grow: 0;
+
+    padding: 4px 10px 3px 10px;
+    border-radius: 7px;
+    
+    font-weight: 800;
+    font-size: 12px;
+    text-align: center;
+    
+    color: #6B5097;
+    background-color: #d8cee8;
+}
